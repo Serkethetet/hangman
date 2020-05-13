@@ -2,6 +2,7 @@ package hangman;
 
 import java.util.Arrays;
 import java.util.Scanner;
+import java.sql.*;
 
 public class Main {
     public static void main(String[] args) {
