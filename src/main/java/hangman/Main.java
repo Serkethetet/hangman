@@ -1,6 +1,8 @@
 package hangman;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 import java.sql.*;
 
@@ -8,9 +10,21 @@ public class Main {
     public static void main(String[] args) {
         Scanner reader = new Scanner(System.in);
 
-        System.out.println("Welcome to Hangman! :)");
-        System.out.println("Please type a word to guess?!?");
-        String word = reader.nextLine();
+        System.out.println("Welcome to Hangman!");
+
+        MySQLAccess mySQLAccess = new MySQLAccess();
+        List<String> words = mySQLAccess.getWords();
+
+        if (words == null) {
+            System.out.println("Failed to retrieve words from DB.");
+            return;
+        }
+
+        Random dice = new Random();
+        String word = words.get(dice.nextInt(words.size()));
+
+
+
         int tries = word.length();
         char[] chars = word.toCharArray();
         char[] blanks = new char[word.length()];
@@ -48,5 +62,13 @@ public class Main {
                 System.out.println("No more guesses...GAMEOVER");
             }
         }
+        //System.out.println("Do you want to play again? Y/N");
+        //char playing = reader.nextLine().charAt(0);
+        //if (playing == 'Y' && playing == 'y') {
+        //  gameloop = true;
+        //}
+        //if (playing == 'N' && playing == 'n') {
+        //    gameloop = false;
+        //}
     }
 }
