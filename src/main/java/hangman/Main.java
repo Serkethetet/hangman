@@ -12,11 +12,16 @@ public class Main {
 
         System.out.println("Welcome to Hangman!");
 
-        MySQLAccess mySQLAccess = new MySQLAccess();
-        List<String> words = mySQLAccess.getWords();
+        //mysql database access
+        //MySQLAccess mySQLAccess = new MySQLAccess();
+        //List<String> words = mySQLAccess.getWords();
+
+        //webscraper access
+        List<String> words = WordProvider.getWords();
+
 
         if (words == null) {
-            System.out.println("Failed to retrieve words from DB.");
+            System.out.println("Failed to retrieve words.");
             return;
         }
 
