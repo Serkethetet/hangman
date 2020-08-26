@@ -20,7 +20,7 @@ public class Main {
         List<String> words = WordProvider.getWords();
 
 
-        if (words == null) {
+        if (words.isEmpty()) {
             System.out.println("Failed to retrieve words.");
             return;
         }

@@ -19,7 +19,7 @@ public class MySQLAccess {
             // Setup the connection with the DB
             connect = DriverManager
                     .getConnection("jdbc:mysql://localhost:3306/hangman?"
-                            + "user=root&password=1234&useLegacyDatetimeCode=false&serverTimezone=UTC");
+                            + "user=root&password=Altic/Puntra7$&useLegacyDatetimeCode=false&serverTimezone=UTC");
 
             // Statements allow to issue SQL queries to the database
             statement = connect.createStatement();

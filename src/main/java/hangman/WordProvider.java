@@ -26,7 +26,7 @@ public class WordProvider {
             for (Element word : words) {
                 //System.out.println(word.text());
 
-                wordList.add(String.valueOf(word));
+                wordList.add(word.text());
             }
         }
         catch (Exception ex) {
